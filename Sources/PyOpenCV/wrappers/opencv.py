@@ -1,0 +1,29 @@
+from swift_tools.swift_types import *
+"import opencv2"
+
+@wrapper
+class Mat:
+	def __init__(pixels: data): ...
+
+# @wrapper(pytype="tuple")
+# class Size2i: ...
+
+
+def imread(filename: str) -> Mat: ...
+
+def imshow(mat: Mat) -> Optional[data]: ...
+
+def blur(src: Mat, ksize: object, anchor: object = None, borderType: int32 = None) -> Mat: ...
+
+@throws
+def GaussianBlur(src: Mat, ksize: object, sigmaX: float, sigmaY: float = None, borderType: int32 = None) -> Mat: ...
+
+@throws
+def bilateralFilter(src: Mat, d: int32, sigmaColor: float, sigmaSpace: float, borderType: int32 = None) -> Mat: ...
+
+def Canny(src: Mat, threshold1: float, threshold2: float, apertureSize: int32 = None) -> Mat: ...
+
+
+
+@wrapper
+class VideoCapture: ...
